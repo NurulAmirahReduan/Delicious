@@ -171,7 +171,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
   <p class="form-control"><?php echo $row["date"]; ?></p>
 </div>         -->          
                         
-  <p><center><div class="col-sm-5 form-group"><a href="news.php" class="btn btn-lg btn-warning btn-block">Cancel</a></div>
+  <p><center><div class="col-sm-5 form-group"><a href="news.php" class="btn btn-lg btn-warning btn-block">Back</a></div>
 
 </div>
 </div>

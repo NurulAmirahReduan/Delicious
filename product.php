@@ -100,7 +100,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">Product's Catalogue Details</h2>
+                        <!-- <h2 class="pull-left">Product's Catalogue Details</h2> -->
                         <!-- <a href="productCreate.php" class="btn btn-success pull-right">Add New Product</a> -->
                     </div>
                     <?php
