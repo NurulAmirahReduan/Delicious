@@ -32,6 +32,22 @@
     line-height: 18px;
 }
 
+table{
+  border-collapse: collapse;
+  width:100%;
+}
+
+th,td{
+text-align: center;
+}
+
+tr:nth-children(even){
+  background-color: #5F9EA0;
+}
+
+h1{
+  color: #5F9EA0;
+}
 </style>
 <body>
   <!--banner-->
@@ -86,8 +102,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">Customer's Profile Details</h2>
-                        <a href="profileCreate.php" class="btn btn-success pull-right">Add New Profile</a>
+                        <!-- <h2 class="pull-left"><strong>User's Profile Details</strong></h2> -->
+                        <!-- <a href="test1.php" class="btn btn-success pull-right">Add New Profile</a> -->
                     </div>
                     <?php
                     // Include config file
@@ -102,7 +118,7 @@
                                     echo "<tr>";
                                         echo "<th>#</th>";
                                         echo "<th>Username</th>";
-                                        echo "<th>Password</th>";
+                                        //echo "<th>Password</th>";
                                         echo "<th>Full Name</th>";
                                         echo "<th>Contact Number</th>";
                                         echo "<th>Address</th>";
@@ -115,7 +131,7 @@
                                     echo "<tr>";
                                         echo "<td>" . $row['id'] . "</td>";
                                         echo "<td>" . $row['username'] . "</td>";
-                                        echo "<td>" . $row['password'] . "</td>";
+                                        //echo "<td>" . $row['password'] . "</td>";
                                         echo "<td>" . $row['fullname'] . "</td>";
                                         echo "<td>" . $row['phone'] . "</td>";
                                         echo "<td>" . $row['address'] . "</td>";

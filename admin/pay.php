@@ -139,7 +139,7 @@
                                         echo "<td>";
                                             echo "<a href='paymentRead.php?id=". $row['id'] ."' title='View Payment' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
                                            echo "<a href='paymentUpdate.php?id=". $row['id'] ."' title='Update Payment' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                           // echo "<a href='paymentDelete.php?id=". $row['id'] ."' title='Delete News' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                           echo "<a href='paymentDelete.php?id=". $row['id'] ."' title='Delete News' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
                                         echo "</td>";
                                     echo "</tr>";
                                 }

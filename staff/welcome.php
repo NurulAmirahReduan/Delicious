@@ -30,7 +30,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <p>
         <a href="reset_password.php" class="btn btn-warning">Reset Your Password</a>
         <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
-        <a href="index.php" class="btn btn-success">Go to Homepage</a>
+        <a href="indexStaff.php" class="btn btn-success">Go to Homepage</a>
     </p>
 
 </body>

@@ -123,7 +123,7 @@
                                         echo "<th>Price</th>";
                                         echo "<th>Detail</th>";
                                         echo "<th>Description</th>";
-                                        echo "<th>Image</th>";
+                                       // echo "<th>Image</th>";
                                         echo "<th>Action</th>";
                                     echo "</tr>";
                                 echo "</thead>";
@@ -136,7 +136,7 @@
                                         echo "<td>" . $row['price'] . "</td>";
                                         echo "<td>" . $row['description'] . "</td>";
                                         echo "<td>" . $row['detail'] . "</td>";
-                                         echo "<td>" . $row['image'] . "</td>";
+                                        // echo "<td>" . $row['image'] . "</td>";
                                         echo "<td>";
                                             echo "<a href='productRead.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
                                             echo "<a href='productUpdate.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";

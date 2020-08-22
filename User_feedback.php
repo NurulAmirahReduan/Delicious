@@ -24,6 +24,7 @@
         .wrapper{
             width: 650px;
             margin: 0 auto;
+
         }
         .page-header h2{
             margin-top: 0;
@@ -88,7 +89,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="heading-title text-center">
-                    <h1 class="header-h">User's Feedback</h1>
+                    <h1 class="header-h"><strong>User's Feedback</strong></h1>
                     <p>Support our bakery by showing your feedback</p>
                 </div>
             </div>
@@ -96,6 +97,7 @@
     </div>
 
     <div class="wrapper">
+      <img src="img/background2.jpg">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -129,9 +131,9 @@
                                         echo "<td>" . $row['email'] . "</td>";
                                         echo "<td>" . $row['comment'] . "</td>";
                                         echo "<td>";
-                                            echo "<a href='feedbackRead.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                            echo "<a href='feedbackUpdate.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                            echo "<a href='feedbackDelete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                            echo "<a href='feedbackRead.php?id=". $row['id'] ."' title='View Feedback' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
+                                            //echo "<a href='feedbackUpdate.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
+                                            //echo "<a href='feedbackDelete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
                                         echo "</td>";
                                     echo "</tr>";
                                 }

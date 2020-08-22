@@ -177,8 +177,8 @@ button:hover {
       <div class="row">
         <div class="col-md-12 text-center marb-35">
           <h1 class="header-h">Menu List</h1>
-          <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-            <br>nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
+          <p class="header-p">We are proud to be as one of this big family where we can share our best product of town.
+            <br>You may choose your based on the these menus. Have fun ordering. </p>
         </div>
 
         <div class="col-md-12  text-center" id="menu-flters">

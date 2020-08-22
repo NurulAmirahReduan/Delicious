@@ -39,6 +39,12 @@ img {
  float:left;
 }
 
+h{
+  text-align: right;
+  color: #20b2aa;
+  font-family: Comic Sans, Comic Sans MS, cursive;;
+  font-size: 25px;
+}
 label{
 
   font-size:150%;
@@ -58,25 +64,50 @@ input{
   justify-content: center; 
 }
 
+.form {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    margin: 0;
+    font-size: 15px;
+    line-height: 18px;
+}
 
-<?php 
-session_start();
-include("db.php");
-include("auth.php");
-?>
+.btn {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+ position: right;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.btn:hover {background-color: #3e8e41}
+
+.btn:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 
 </style>
-	<!-- Start Reservation -->
-	<div class="reservation-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="heading-title text-center">
-						<h1 class="header-h">Our Menu</h1>
-						<p>Let us tell you how it taste</p>
-					</div>
-				</div>
-			</div>
+  <!-- Start Reservation -->
+  <div class="reservation-box">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="heading-title text-center">
+            <h1 class="header-h">Our Menu</h1>
+            <p>Let us tell you how it taste</p>
+          </div>
+        </div>
+      </div>
        
 
   <form>
@@ -87,29 +118,23 @@ include("auth.php");
              <img src="img/fruitCake.jpg" alt="fruitCake"  style="width:500px; height:500px; margin-right:15px;">
               </div>
                 <div>
-                        <strong><label for="nTitle">FRUIT CAKE</label></strong><br>
+
+          <strong><label><h>FRUIT CAKE</h></label></strong><br>
                       <p>  Hey there, let's try our delicious cake which are combination of fresh mixed fruit. You can choose what type of fruit that you prefer plus other decoration can also be made.</p>
                
-<div class="form-group">
-<form action="/.php">
-  <div class="form-group">
-        <div class="form-row">
-           <div class="col">
-          <label for="size">Size:</label>
-          <select id="size" name="size" >
-            <option value="4*6.Rm20">4*6.Rm20</option>
-              <option value="6*9.Rm30">6*9.Rm30</option>
-              <option value="9*13.Rm40">9*13.Rm40</option>
-              <option value="11*15.Rm50">11*15.Rm50</option>
-              <option value="18*24.Rm60">18*24.Rm60</option>
-          </select>
-        </div>
-      </div>
+          <div class="form-group">
+                  <label>Size:</label>
+                  <select id="size" name="size" >
+                    <option value="4*6.Rm20">4*6.Rm20</option>
+                      <option value="6*9.Rm30">6*9.Rm30</option>
+                      <option value="9*13.Rm40">9*13.Rm40</option>
+                      <option value="11*15.Rm50">11*15.Rm50</option>
+                      <option value="18*24.Rm60">18*24.Rm60</option>
+                  </select>
+              </div>
 
-          <form action="/.php">
-            <div class="form-group">
-                 <div class="column">
-                    <label for="quantity">Quantity:</label>
+      <div class="form-group">
+                    <label>Quantity:</label>
                     <select id="quantity" name="quantity" >
                       <option value="1">1</option>
                         <option value="2">2</option>
@@ -117,32 +142,30 @@ include("auth.php");
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                  </div>
                 </div>
 
-
-          <form action="/.php">
             <div class="form-group">
                 <div class="column">
-                   <label for="Description"> Description: </label>
+                   <label> Description: </label>
                         <div><textarea rows = "5" cols = "50" name = "description">
                             Enter description here...
                          </textarea></div>
                        </div>
                      </div>
 
-
-<form action="/.php">
             <div class="form-group">
                 <div class="column">
                 <div><input type = "file" name = "fileupload" accept = "image/*" /></div>
               </div>
             </div>
         
-         <input type = "submit" name = "submit" value = "Submit" />
-         <input type = "reset" name = "reset"  value = "Reset" />
-         <input type = "button" name = "ok" value = "OK" />
-        <a href="index.php"> <input type = "button" name = "back" value = "Back" /></a>
+       
+        <div type="submit" class="col-sm-2 form-group">
+         <input type = "submit" name = "submit" value = "Submit" class="btn btn-lg btn-warning btn-block" />
+         <input type = "reset" name = "reset"  value = "Reset"class="btn btn-lg btn-warning btn-block" />
+        </div>
+      
+          
 
                  </div>
                </div>
@@ -159,8 +182,8 @@ include("auth.php");
 
 
 
-	<!-- End Reservation -->
-	
+  <!-- End Reservation -->
+  
   
 
   <!-- footer -->
@@ -193,100 +216,7 @@ include("auth.php");
       </div>
     </div>
  
-    <?php
-
-    $query = "SELECT * from product_catalogue_detail";
-    $result = mysqli_query($conn, $query);
-
-    $tot_item = mysqli_num_rows($result);
-
-    ?>
-
-    <div class="row">
-      <div class="col">
-        <div class="card-columns" id="display_area">
-          <?php
-          while($row = mysqli_fetch_assoc($result)){
-
-            $itm_pID = $row['pID'];
-            $itm_pType = $row['pType'];
-            $itm_pName = $row['pName'];
-            $itm_pPrice = $row['pPrice'];
-            $itm_pDescription = $row['pDescription'];
-            $itm_pDetail = $row['pDetail'];
-            $itm_pImg = $row['pImg'];
-
-            ?>
-
-            <div class="card text-right" style="width: 18rem;">
-              
-              <?php 
-
-              if ($itm_pImg != null) {
-
-                echo '<img class="card-img-top" src="img/'. $itm_pImg .'" alt="Card image cap">';
-
-              } else {
-
-                echo '<img class="card-img-top" src="https://dummyimage.com/640x360/f0f0f0/aaa" alt="Card image cap">';
-              }
-
-              ?>
-
-              <div class="card-body">
-                <h5 class="card-title"><?php echo $itm_pName; ?></h5>
-                <p class="card-text">RM <?php echo $itm_pPrice; ?></p>
-              </div>
-              <div class="card-body" id="<?php echo encryptIt($itm_pID); ?>">
-                <a href="menu?act=view&id=<?php echo encryptIt($itm_pID); ?>" class="btn btn-outline-success mx-1">More info</a>
-                <a href="menu?act=add&id=<?php echo encryptIt($itm_pID); ?>" class="btn btn-success">Add to cart</a>
-              </div>
-            </div>
-            <?php
-          }
-          ?>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container p-5 d-none" id="menu_info">
-
-    <?php
-    $pID = decryptIt($_GET['pID']);
-
-    $query = "SELECT * from product_catalogue_detail WHERE product='$pID'";
-    $row = mysqli_fetch_assoc(mysqli_query($conn, $query));
-    ?>
-
-    <h2 class="display-4 text-light"><?php echo $row['pName']; ?></h2>
-
-    <div class="card">
-      <?php
-
-      if ($row['pImg'] != null) {
-
-        echo '<img class="card-img-top" src="img/'. $row['pImg'] .'" alt="Card image cap">';
-
-      } else {
-
-        echo '<img class="card-img-top" src="https://dummyimage.com/640x360/f0f0f0/aaa" alt="Card image cap">';
-      }
-
-      ?>
-
-      <div class="card-body">
-        <p class="card-text text-truncate"><?php echo $row['pDetail']; ?></p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">RM <?php echo $row['pPrice']; ?></li>
-        <li class="list-group-item"><?php echo $row['pDescription']; ?></li>
-      </ul>
-      <div class="card-body text-center" id="<?php echo encryptIt($row['pID']); ?>">
-        <a href="menu?act=add&id=<?php echo encryptIt($row['pID']); ?>" class="btn btn-success">Add to cart</a>
-      </div>
-    </div>
-  </div>
+    
 
    </footer>
   <!-- / footer -->

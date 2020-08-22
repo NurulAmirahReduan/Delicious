@@ -52,36 +52,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $detail = $input_detail;
     }
     
-    if(!empty($_FILES['image']['name'])){
+    // if(!empty($_FILES['image']['name'])){
         
-        //Fetch file info
-        $file_name = $_FILES['image']['name'];
-        $file_tmp = $_FILES['image']['tmp_name'];
+    //     //Fetch file info
+    //     $file_name = $_FILES['image']['name'];
+    //     $file_tmp = $_FILES['image']['tmp_name'];
 
-        $newdir = '../img';
+    //     $newdir = '../img';
 
-        if (!file_exists($newdir)) {
-            mkdir ($newdir, 0744);
-        }
+    //     if (!file_exists($newdir)) {
+    //         mkdir ($newdir, 0744);
+    //     }
 
-        move_uploaded_file($file_tmp, "../img" . $file_name);
+    //     move_uploaded_file($file_tmp, "../img" . $file_name);
 
-        // $query = "UPDATE fds_ctlog SET ctlog_img = '$file_name', ctlog_nme = '$nme', ctlog_prc = '$prc', ctlog_desc = '$desc', ctlog_shp = '$shp', ctlog_log = '$date' WHERE ctlog_id = '$id'";
-        // $result = mysqli_query($conn, $query);
+       
+    //     exit();
 
-        //header ('location: product.php');
-        exit();
-
-    }
+    // }
 
     // Check input errors before inserting in database
-    if(empty($type_err) && empty($name_err) && empty($price_err) && empty($description_err) && empty($detail_err) && empty($image_err)){
+    if(empty($type_err) && empty($name_err) && empty($price_err) && empty($description_err) && empty($detail_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO product (type, name , price, description, detail, image) VALUES (?, ?, ?,?,?,?)";
+        $sql = "INSERT INTO product (type, name , price, description, detail) VALUES (?, ?, ?,?,?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssssss", $param_type, $param_name, $param_price, $param_description, $param_detail,$param_image);
+            mysqli_stmt_bind_param($stmt, "ssssss", $param_type, $param_name, $param_price, $param_description, $param_detail);
             
             // Set parameters
             $param_type=$type;
@@ -89,7 +86,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_price=$price;
             $param_detail = $detail;
             $param_description = $description;
-             $param_image = $image;
+            // $param_image = $image;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -165,11 +162,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <span class="help-block"><?php echo $detail_err;?></span>
                         </div>
 
-                        <div class="form-group <?php echo (!empty($image_err)) ? 'has-error' : ''; ?>">
+                     <!--    <div class="form-group <?php echo (!empty($image_err)) ? 'has-error' : ''; ?>">
                             <label>Upload</label>
                            <input type="file" name="image" class="form-control" value="<?php echo $image;?>">
                             <span class="help-block"><?php echo $image_err;?></span>
-                        </div>
+                        </div> -->
 
                         <input type="submit" class="btn btn-primary" value="Submit">
                         <a href="product.php" class="btn btn-default">Cancel</a>

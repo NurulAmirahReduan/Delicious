@@ -107,10 +107,12 @@ table {
 }
 
 .header-h {
-    color: #FFB03B
+  
     font-size: 46px;
     font-family: 'Satisfy', sans-serif;
-    font-weight: 300;
+    color: #66004b;
+    font-weight: bold;
+    
 }
 .header-p {
     color: #9699a6;

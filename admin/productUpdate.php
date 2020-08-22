@@ -3,8 +3,8 @@
 require_once "../config.php";
  
 // Define variables and initialize with empty values
-$type = $name = $price=$description = $detail = $image="";
-$type_err= $name_err = $price_err=  $description_err = $detail_err = $image_err= "";
+$type = $name = $price=$description = $detail="";
+$type_err= $name_err = $price_err=  $description_err = $detail_err= "";
  
 // Processing form data when form is submitted
 if(isset($_POST["id"]) && !empty($_POST["id"])){
@@ -62,36 +62,31 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     }
    
 
-    if(!empty($_FILES['image']['name'])){
+    // if(!empty($_FILES['image']['name'])){
         
-        //Fetch file info
-        $file_name = $_FILES['image']['name'];
-        $file_tmp = $_FILES['image']['tmp_name'];
+    //     //Fetch file info
+    //     $file_name = $_FILES['image']['name'];
+    //     $file_tmp = $_FILES['image']['tmp_name'];
 
-        $newdir = '../img';
+    //     $newdir = '../img';
 
-        if (!file_exists($newdir)) {
-            mkdir ($newdir, 0744);
-        }
+    //     if (!file_exists($newdir)) {
+    //         mkdir ($newdir, 0744);
+    //     }
 
-        move_uploaded_file($file_tmp, "../img" . $file_name);
+    //     move_uploaded_file($file_tmp, "../img" . $file_name);
+    //     exit();
 
-        // $query = "UPDATE fds_ctlog SET ctlog_img = '$file_name', ctlog_nme = '$nme', ctlog_prc = '$prc', ctlog_desc = '$desc', ctlog_shp = '$shp', ctlog_log = '$date' WHERE ctlog_id = '$id'";
-        // $result = mysqli_query($conn, $query);
-
-        //header ('location: product.php');
-        exit();
-
-    }
+    // }
 
     // Check input errors before inserting in database
-    if(empty($type_err) && empty($name_err) && empty($price_err) && empty($description_err) && empty($detail_err) && empty($image_err)){
+    if(empty($type_err) && empty($name_err) && empty($price_err) && empty($description_err) && empty($detail_err)){
         // Prepare an update statement
         $sql = "UPDATE product SET type=?, name=?,price=?, description=?, detail=? , image='?' WHERE id=?";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssissbi", $param_type, $param_name, $param_price, $param_description, $param_detail,$param_image, $param_id);
+            mysqli_stmt_bind_param($stmt, "sssssi", $param_type, $param_name, $param_price, $param_description, $param_detail, $param_id);
             
             // Set parameters
             $param_type=$type;
@@ -99,7 +94,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             $param_price = $price;
             $param_description = $description;
             $param_detail = $detail;
-            $param_image=$image;
+            //$param_image=$image;
             $param_id = $id;
             
             // Attempt to execute the prepared statement
@@ -148,7 +143,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     $price = $row["price"];
                     $description = $row["description"];
                     $detail = $row["detail"];
-                    $image=$row["image"];
+                   // $image=$row["image"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: productError.php");
@@ -226,11 +221,11 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             <span class="help-block"><?php echo $detail_err;?></span>
                         </div>
 
-                         <div class="form-group <?php echo (!empty($image_err)) ? 'has-error' : ''; ?>">
+                         <!-- <div class="form-group <?php echo (!empty($image_err)) ? 'has-error' : ''; ?>">
                             <label>Upload</label>
                            <input type="file" name="image" class="form-control" value="<?php echo $image;?>">
                             <span class="help-block"><?php echo $image_err;?></span>
-                        </div>
+                        </div> -->
 
 
                         <input type="hidden" name="id" value="<?php echo $id; ?>"/>

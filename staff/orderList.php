@@ -101,7 +101,7 @@
                 <div class="col-md-12">
                     <div class="page-header clearfix">
                         <h2 class="pull-left">Order Details</h2>
-                        <a href="orderCreate.php" class="btn btn-success pull-right">Add New Order</a>
+                        <!-- <a href="orderCreate.php" class="btn btn-success pull-right">Add New Order</a> -->
                     </div>
                     <?php
                     // Include config file
