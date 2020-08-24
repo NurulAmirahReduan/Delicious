@@ -48,7 +48,7 @@ table {
 #banner h2{
     font-family: 'Satisfy', sans-serif;
     font-size: 45px;
-    color: #FFB03B;
+    color: #DB7093
 }
 #banner p{
     font-family: 'PT Sans', sans-serif;
@@ -62,7 +62,8 @@ table {
     font-family: 'Satisfy', sans-serif;
     font-size: 65px;
     margin-top: 140px;
-    color: #FFB03B;
+    color: #8B008B
+    font-weight: bold;
 }
 .sidenav {
     height: 100%;
@@ -110,7 +111,7 @@ table {
   
     font-size: 46px;
     font-family: 'Satisfy', sans-serif;
-    color: #66004b;
+    color: #FFB03B;
     font-weight: bold;
     
 }
